@@ -15,7 +15,7 @@
 Partiduo::Modules.register do
   code "ESALINK"
   name "esalink.module.name"
-  version "0.1.0"
+  version Esalink::VERSION
   requires_core "~> 0.1"
   depends_on "EINV"
 
