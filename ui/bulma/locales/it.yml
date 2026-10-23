@@ -1,0 +1,39 @@
+it:
+  esalink_ui:
+    title: "Piattaforma accreditata EsaLink"
+    note: "La password, la chiave API e i token sono cifrati nel database e non vengono mai più mostrati. Una volta collegata, EsaLink diventa la piattaforma accreditata della fatturazione elettronica: trasmissioni, ricezioni e stati si seguono nelle schermate della fatturazione elettronica."
+    status:
+      title: "Stato del collegamento"
+      connected: "EsaLink è collegato."
+      none: "EsaLink non è collegato: inserisca qui sotto le Sue credenziali."
+      disconnected: "EsaLink è scollegato; i suoi parametri restano salvati."
+      other_adapter: "Un'altra piattaforma (%{adapter}) è attualmente collegata; il collegamento a EsaLink la sostituirà."
+      preproduction_note: "Preproduzione: le fatture scambiate sono fittizie e non vengono inviate all'amministrazione."
+      environment: "Ambiente"
+      url: "Indirizzo dell'API"
+      username: "Identificativo"
+      last_sync: "Ultima sincronizzazione"
+      never_synced: "Mai sincronizzata"
+    connect:
+      title: "Collegarsi"
+      change: "Modifica il collegamento"
+      help: "Inserisca l'identificativo e la password del Suo accesso EsaLink (forniti da EsaLink o da un distributore membro di PDP Libre). Vengono provati presso EsaLink prima di essere salvati."
+      secret_stored: "Salvato — lasci vuoto per conservarlo"
+      api_key_help: "Facoltativa: da indicare se EsaLink Gliene ha consegnata una."
+      urls: "Indirizzi dell'API"
+      production_help: "Obbligatorio in produzione: l'indirizzo comunicato da EsaLink."
+      directory_help: "Facoltativo: API Rubrica XP Z12-013, se EsaLink la offre."
+      token_help: "Facoltativo: indirizzo di POST /token se EsaLink lo separa dall'indirizzo dell'API (predefinito: indirizzo dell'API seguito da token)."
+      reentry_help: "Cambiare ambiente o indirizzo obbliga a inserire di nuovo la password (e la chiave API): i segreti salvati non vengono mai inviati a un nuovo indirizzo."
+      forbidden: "Salvare o scollegare il collegamento richiede anche l'autorizzazione a configurare la fatturazione elettronica."
+    deviations:
+      title: "Scostamenti rilevati rispetto alla norma XP Z12-013"
+      help: "L'API di EsaLink segue l'API Flux della norma; questi scostamenti sono gestiti dall'adattatore."
+    actions:
+      connect: "Prova e collega"
+      check: "Prova il collegamento"
+      disconnect: "Scollega"
+    flash:
+      connected: "EsaLink è collegato (%{mode})."
+      checked: "EsaLink risponde (%{mode}, %{url})."
+      disconnected: "EsaLink è scollegato."

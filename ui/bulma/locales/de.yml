@@ -1,0 +1,39 @@
+de:
+  esalink_ui:
+    title: "Zugelassene Plattform EsaLink"
+    note: "Passwort, API-Schlüssel und Tokens werden in der Datenbank verschlüsselt und nie wieder angezeigt. Nach der Anbindung wird EsaLink zur zugelassenen Plattform der E-Rechnung: Übermittlungen, Empfänge und Status werden in den E-Rechnungs-Bildschirmen verfolgt."
+    status:
+      title: "Verbindungsstatus"
+      connected: "EsaLink ist angebunden."
+      none: "EsaLink ist nicht angebunden: Geben Sie unten Ihre Zugangsdaten ein."
+      disconnected: "EsaLink ist getrennt; seine Einstellungen bleiben gespeichert."
+      other_adapter: "Derzeit ist eine andere Plattform (%{adapter}) angebunden; die Anbindung an EsaLink ersetzt sie."
+      preproduction_note: "Vorproduktion: Die ausgetauschten Rechnungen sind fiktiv und gehen nicht an die Verwaltung."
+      environment: "Umgebung"
+      url: "API-Adresse"
+      username: "Kennung"
+      last_sync: "Letzte Synchronisierung"
+      never_synced: "Nie synchronisiert"
+    connect:
+      title: "Anbinden"
+      change: "Anbindung ändern"
+      help: "Geben Sie Kennung und Passwort Ihres EsaLink-Zugangs ein (von EsaLink oder einem Vertriebspartner aus PDP Libre bereitgestellt). Sie werden bei EsaLink getestet, bevor sie gespeichert werden."
+      secret_stored: "Gespeichert — leer lassen, um es zu behalten"
+      api_key_help: "Optional: anzugeben, wenn EsaLink Ihnen einen übergeben hat."
+      urls: "API-Adressen"
+      production_help: "In der Produktion erforderlich: die von EsaLink mitgeteilte Adresse."
+      directory_help: "Optional: Verzeichnis-API XP Z12-013, falls EsaLink sie anbietet."
+      token_help: "Optional: Adresse von POST /token, falls EsaLink sie von der API-Adresse trennt (Standard: API-Adresse gefolgt von token)."
+      reentry_help: "Ein Wechsel der Umgebung oder Adresse erfordert die erneute Eingabe des Passworts (und des API-Schlüssels): Gespeicherte Geheimnisse gehen nie an eine neue Adresse."
+      forbidden: "Das Speichern oder Trennen der Anbindung erfordert auch die Berechtigung, die E-Rechnung einzurichten."
+    deviations:
+      title: "Festgestellte Abweichungen von der Norm XP Z12-013"
+      help: "Die API von EsaLink folgt der Flux-API der Norm; diese Abweichungen werden vom Adapter behandelt."
+    actions:
+      connect: "Testen und anbinden"
+      check: "Verbindung testen"
+      disconnect: "Trennen"
+    flash:
+      connected: "EsaLink ist angebunden (%{mode})."
+      checked: "EsaLink antwortet (%{mode}, %{url})."
+      disconnected: "EsaLink ist getrennt."

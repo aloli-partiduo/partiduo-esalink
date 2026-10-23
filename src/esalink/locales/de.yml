@@ -1,0 +1,44 @@
+de:
+  esalink:
+    module:
+      name: "EsaLink (zugelassene Plattform)"
+    permissions:
+      connection:
+        adapter_missing: "Der EsaLink-Adapter ist in dieser Distribution nicht verfügbar."
+        secret_reentry: "Umgebung oder Adresse geändert: Geben Sie dieses Geheimnis erneut ein."
+        manage: "Zugelassene Plattform EsaLink anbinden"
+    menu:
+      esalink: "EsaLink"
+    adapter: "EsaLink — Hubtimize (Flux-API XP Z12-013)"
+    modes:
+      sandbox: "Vorproduktion"
+      production: "Produktion"
+    deviations:
+      token_password: "Token per Kennung und Passwort abgerufen (POST /token in JSON), nicht per OAuth 2 client credentials: Der Adapter fordert bei Ablauf ein neues Token an."
+      api_key_header: "Hubtimize-eigener API-Schlüssel im Header hubtimize-api-key, gesendet, wenn er angegeben ist."
+      request_id_query: "Anfragekennung Request-Id als Adressparameter erwartet: Der Adapter sendet sie als Parameter und als Header."
+      download_accept: "Herunterladen eines als application/octet-stream ausgelieferten Flusses: Der Adapter fordert ihn so an."
+      search_without_cursor: "Flusssuche ohne nextCursor, mit Gesamtzahl und ohne garantierte Sortierung: Der Adapter liest die Suche vollständig neu (limit = Gesamtzahl, bis zu 5.000 Flüsse) und sortiert sie dann nach Aktualisierungsdatum."
+      no_refresh_token: "Keine Route zum Erneuern des Tokens."
+      production_url: "Produktionsadresse nicht veröffentlicht: einzugeben, sobald EsaLink sie mitteilt."
+    fields:
+      environment: "Umgebung"
+      username: "Kennung"
+      password: "Passwort"
+      api_key: "API-Schlüssel (hubtimize-api-key)"
+      preproduction_url: "Vorproduktionsadresse"
+      production_url: "Produktionsadresse"
+      directory_url: "Adresse der Verzeichnis-API"
+      token_url: "Authentifizierungsadresse (/token)"
+    environments:
+      preproduction: "Vorproduktion"
+      production: "Produktion"
+    errors:
+      connection:
+        adapter_missing: "Der EsaLink-Adapter ist in dieser Distribution nicht verfügbar."
+        secret_reentry: "Umgebung oder Adresse geändert: Geben Sie dieses Geheimnis erneut ein."
+        production_url: "Geben Sie die von EsaLink mitgeteilte Produktionsadresse an."
+        failed: "EsaLink antwortet nicht wie erwartet: %{detail}"
+        missing: "EsaLink ist nicht die angebundene Plattform."
+      transport:
+        no_production_url: "Produktionsadresse von EsaLink nicht angegeben"

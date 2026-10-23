@@ -1,0 +1,44 @@
+es:
+  esalink:
+    module:
+      name: "EsaLink (plataforma autorizada)"
+    permissions:
+      connection:
+        adapter_missing: "El adaptador EsaLink no está disponible en esta distribución."
+        secret_reentry: "Entorno o dirección modificados: introduzca de nuevo este secreto."
+        manage: "Conectar la plataforma autorizada EsaLink"
+    menu:
+      esalink: "EsaLink"
+    adapter: "EsaLink — Hubtimize (API Flux XP Z12-013)"
+    modes:
+      sandbox: "Preproducción"
+      production: "Producción"
+    deviations:
+      token_password: "Token obtenido mediante identificador y contraseña (POST /token en JSON), y no mediante OAuth 2 client credentials: el adaptador vuelve a pedir un token al caducar."
+      api_key_header: "Clave de API propia de Hubtimize en el encabezado hubtimize-api-key, enviada si se ha indicado."
+      request_id_query: "Identificador de solicitud Request-Id esperado como parámetro de la dirección: el adaptador lo envía como parámetro y como encabezado."
+      download_accept: "Descarga de un flujo servido en application/octet-stream: el adaptador lo solicita así."
+      search_without_cursor: "Búsqueda de flujos sin nextCursor, con un total y sin orden garantizado: el adaptador vuelve a leer la búsqueda completa (limit = total, hasta 5000 flujos) y luego la ordena por fecha de actualización."
+      no_refresh_token: "Ninguna ruta de renovación del token."
+      production_url: "Dirección de producción no publicada: debe introducirse cuando EsaLink la comunique."
+    fields:
+      environment: "Entorno"
+      username: "Identificador"
+      password: "Contraseña"
+      api_key: "Clave de API (hubtimize-api-key)"
+      preproduction_url: "Dirección de preproducción"
+      production_url: "Dirección de producción"
+      directory_url: "Dirección de la API de directorio"
+      token_url: "Dirección de autenticación (/token)"
+    environments:
+      preproduction: "Preproducción"
+      production: "Producción"
+    errors:
+      connection:
+        adapter_missing: "El adaptador EsaLink no está disponible en esta distribución."
+        secret_reentry: "Entorno o dirección modificados: introduzca de nuevo este secreto."
+        production_url: "Indique la dirección de producción comunicada por EsaLink."
+        failed: "EsaLink no responde como se esperaba: %{detail}"
+        missing: "EsaLink no es la plataforma conectada."
+      transport:
+        no_production_url: "dirección de producción de EsaLink sin indicar"

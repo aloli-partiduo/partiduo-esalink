@@ -1,0 +1,39 @@
+pt:
+  esalink_ui:
+    title: "Plataforma acreditada EsaLink"
+    note: "A palavra-passe, a chave de API e os tokens são cifrados na base de dados e nunca mais são apresentados. Depois de ligada, a EsaLink passa a ser a plataforma acreditada da faturação eletrónica: transmissões, receções e estados acompanham-se nos ecrãs de faturação eletrónica."
+    status:
+      title: "Estado da ligação"
+      connected: "A EsaLink está ligada."
+      none: "A EsaLink não está ligada: introduza as suas credenciais abaixo."
+      disconnected: "A EsaLink está desligada; os seus parâmetros continuam guardados."
+      other_adapter: "Outra plataforma (%{adapter}) está atualmente ligada; ligar-se à EsaLink irá substituí-la."
+      preproduction_note: "Pré-produção: as faturas trocadas são fictícias e não seguem para a administração."
+      environment: "Ambiente"
+      url: "Endereço da API"
+      username: "Identificador"
+      last_sync: "Última sincronização"
+      never_synced: "Nunca sincronizada"
+    connect:
+      title: "Ligar-se"
+      change: "Alterar a ligação"
+      help: "Introduza o identificador e a palavra-passe do seu acesso EsaLink (fornecidos pela EsaLink ou por um distribuidor membro da PDP Libre). São testados junto da EsaLink antes de serem guardados."
+      secret_stored: "Guardado — deixe vazio para o manter"
+      api_key_help: "Facultativa: a preencher se a EsaLink lhe tiver entregado uma."
+      urls: "Endereços da API"
+      production_help: "Obrigatório em produção: o endereço comunicado pela EsaLink."
+      directory_help: "Facultativo: API de diretório XP Z12-013, se a EsaLink a disponibilizar."
+      token_help: "Facultativo: endereço de POST /token se a EsaLink o separar do endereço da API (por predefinição: endereço da API seguido de token)."
+      reentry_help: "Mudar de ambiente ou de endereço obriga a introduzir novamente a palavra-passe (e a chave de API): os segredos guardados nunca seguem para um endereço novo."
+      forbidden: "Guardar ou desligar a ligação exige também a permissão de configurar a faturação eletrónica."
+    deviations:
+      title: "Desvios constatados em relação à norma XP Z12-013"
+      help: "A API da EsaLink segue a API Flux da norma; estes desvios são tratados pelo adaptador."
+    actions:
+      connect: "Testar e ligar"
+      check: "Testar a ligação"
+      disconnect: "Desligar"
+    flash:
+      connected: "A EsaLink está ligada (%{mode})."
+      checked: "A EsaLink responde (%{mode}, %{url})."
+      disconnected: "A EsaLink está desligada."

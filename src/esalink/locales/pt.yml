@@ -1,0 +1,44 @@
+pt:
+  esalink:
+    module:
+      name: "EsaLink (plataforma acreditada)"
+    permissions:
+      connection:
+        adapter_missing: "O adaptador EsaLink não está disponível nesta distribuição."
+        secret_reentry: "Ambiente ou endereço alterados: introduza novamente este segredo."
+        manage: "Ligar a plataforma acreditada EsaLink"
+    menu:
+      esalink: "EsaLink"
+    adapter: "EsaLink — Hubtimize (API Flux XP Z12-013)"
+    modes:
+      sandbox: "Pré-produção"
+      production: "Produção"
+    deviations:
+      token_password: "Token obtido por identificador e palavra-passe (POST /token em JSON), e não por OAuth 2 client credentials: o adaptador volta a pedir um token quando expira."
+      api_key_header: "Chave de API própria da Hubtimize no cabeçalho hubtimize-api-key, enviada se estiver preenchida."
+      request_id_query: "Identificador de pedido Request-Id esperado como parâmetro do endereço: o adaptador envia-o como parâmetro e como cabeçalho."
+      download_accept: "Transferência de um fluxo servido em application/octet-stream: o adaptador pede-o assim."
+      search_without_cursor: "Pesquisa de fluxos sem nextCursor, com um total e sem ordenação garantida: o adaptador relê a pesquisa completa (limit = total, até 5000 fluxos) e depois ordena-a por data de atualização."
+      no_refresh_token: "Nenhuma rota de renovação do token."
+      production_url: "Endereço de produção não publicado: a introduzir quando a EsaLink o comunicar."
+    fields:
+      environment: "Ambiente"
+      username: "Identificador"
+      password: "Palavra-passe"
+      api_key: "Chave de API (hubtimize-api-key)"
+      preproduction_url: "Endereço de pré-produção"
+      production_url: "Endereço de produção"
+      directory_url: "Endereço da API de diretório"
+      token_url: "Endereço de autenticação (/token)"
+    environments:
+      preproduction: "Pré-produção"
+      production: "Produção"
+    errors:
+      connection:
+        adapter_missing: "O adaptador EsaLink não está disponível nesta distribuição."
+        secret_reentry: "Ambiente ou endereço alterados: introduza novamente este segredo."
+        production_url: "Indique o endereço de produção comunicado pela EsaLink."
+        failed: "A EsaLink não responde como esperado: %{detail}"
+        missing: "A EsaLink não é a plataforma ligada."
+      transport:
+        no_production_url: "endereço de produção da EsaLink não preenchido"

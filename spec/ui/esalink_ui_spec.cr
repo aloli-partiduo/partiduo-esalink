@@ -140,13 +140,19 @@ describe "Écran de raccordement EsaLink sous /ext/ESALINK/ (ADR-005 D4)" do
     refused.html.should_not contain(Sim::API_KEY)
   end
 
-  it "se traduit en anglais et en néerlandais" do
+  it "se traduit dans chaque langue de l'interface" do
     browser = signed_in
-    {
+    texts_by_locale = {
       "en" => {"EsaLink accredited platform", "Test and connect", "Password"},
       "nl" => {"Erkend platform EsaLink", "Testen en koppelen", "Wachtwoord"},
+      "de" => {"Zugelassene Plattform EsaLink", "Testen und anbinden", "Passwort"},
+      "es" => {"Plataforma autorizada EsaLink", "Probar y conectar", "Contraseña"},
+      "it" => {"Piattaforma accreditata EsaLink", "Prova e collega", "Password"},
+      "pt" => {"Plataforma acreditada EsaLink", "Testar e ligar", "Palavra-passe"},
       "fr" => {"Plateforme agréée EsaLink", "Tester et raccorder", "Mot de passe"},
-    }.each do |locale, texts|
+    }
+    texts_by_locale.keys.to_set.should eq(Partiduo::LOCALES.to_set)
+    texts_by_locale.each do |locale, texts|
       browser.post("/language", {"locale" => locale, "next" => "/ext/ESALINK/"})
       html = browser.get("/ext/ESALINK/").html
       texts.each { |text| html.should contain(text) }

@@ -101,7 +101,7 @@ src/esalink/
 ├── app.cr, manifest.cr           # application Marten `esalink` (libellés), manifeste ESALINK
 ├── connector.cr                  # Esalink::Connector < Einvoicing::Connectors::Afnor
 ├── api/                          # contrat public Esalink::Api
-└── locales/                      # fr, en, nl
+└── locales/                      # fr, en, nl, de, es, it, pt
 ui/bulma/                         # interface Bulma (Esalink::Ui), ADR-005 D4
 spec/support/esalink_platform.cr  # EsaLink simulée (devant l'API Flux simulée d'EINV)
 spec/integration/                 # suite facultative contre la préproduction réelle

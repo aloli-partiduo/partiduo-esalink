@@ -138,7 +138,7 @@ describe "Adaptateur EsaLink : points d'extension de l'adaptateur XP Z12-013" do
     connector.more?(%({"total": "illisible"}), 1).should be_false
   end
 
-  it "liste sept écarts à la norme, tous traduits en fr, en et nl" do
+  it "liste sept écarts à la norme, tous traduits dans chaque langue de l'interface" do
     Esalink::Connector::DEVIATIONS.size.should eq(7)
     Esalink::Connector::DEVIATIONS.uniq.size.should eq(7)
     Partiduo::LOCALES.each do |locale|
