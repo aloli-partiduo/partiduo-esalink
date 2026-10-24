@@ -253,6 +253,7 @@ describe "EsaLink : activation (ModuleDisabled, dépendance à EINV)" do
     manifest = Partiduo::Modules["ESALINK"]
     manifest.permissions.should eq(["esalink.connection.manage"])
     manifest.depends_on.should eq(["EINV"])
+    manifest.incompatible_with_kind.should eq(["household"])
     menu = manifest.menus.find! { |entry| entry.code == "ESALINK" }
     {menu.parent, menu.permission}.should eq({"SETTINGS", "esalink.connection.manage"})
   end
