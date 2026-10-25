@@ -14,6 +14,10 @@
 #   conduits par EINV, qui appelle l'adaptateur.
 # * Exclusion (D-AMD-042 du cœur) : jamais dans le dossier d'un foyer
 #   (`incompatible_with_kind "household"`), même sans PERSO, comme EINV.
+# * Réservée au régime fiscal `fr` (`regimes "fr"`, D-AMD-043 du cœur) :
+#   EsaLink est une plateforme agréée de la réforme française, et son
+#   adaptateur n'est proposé qu'à un dossier `fr` ; un dossier belge passe
+#   par Peppol (`PEPPOL_BE` d'EINV) ou par SUPER PDP.
 Partiduo::Modules.register do
   code "ESALINK"
   name "esalink.module.name"
@@ -21,6 +25,7 @@ Partiduo::Modules.register do
   requires_core "~> 0.1"
   depends_on "EINV"
   incompatible_with_kind "household"
+  regimes "fr"
 
   permission "esalink.connection.manage"
 

@@ -31,11 +31,15 @@ describe "Raccordement à EsaLink (ADR-004 D2)" do
     I18n.t(environment.choice_key("preproduction")).should eq("Préproduction")
   end
 
-  it "n'est pas proposée à un dossier belge" do
-    S.books("be")
+  it "n'est pas proposée à un dossier belge : extension refusée par le cœur (regimes \"fr\"), adaptateur indisponible" do
+    E.books("be")
+    # Réservée au régime fr (D-AMD-043 du cœur) : l'activation est refusée.
+    refused = Partiduo::Api::Modules.activate(S::SYSTEM, "ESALINK")
+    refused.error_keys.should eq(["modules.errors.activation.excluded_regime"])
+    refused.errors.first.params.should eq({"module" => "ESALINK", "regimes" => "FR", "regime" => "BE"})
+    Partiduo::Modules.active?("ESALINK").should be_false
+    # L'adaptateur, enregistré auprès d'EINV, n'est pas proposé non plus.
     EApi.adapters(S.admin).find! { |item| item.code == "ESALINK" }.available.should be_false
-    result = Api.connect(S.admin, S.input)
-    result.errors.map(&.key).should contain("einvoicing.errors.connection.adapter.regime")
     S.platform.calls.should be_empty
   end
 

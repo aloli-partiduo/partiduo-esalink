@@ -254,6 +254,9 @@ describe "EsaLink : activation (ModuleDisabled, dépendance à EINV)" do
     manifest.permissions.should eq(["esalink.connection.manage"])
     manifest.depends_on.should eq(["EINV"])
     manifest.incompatible_with_kind.should eq(["household"])
+    # Réservée au régime fr (D-AMD-043 du cœur), comme son adaptateur.
+    manifest.regimes.should eq(["fr"])
+    manifest.admits_regime?("be").should be_false
     menu = manifest.menus.find! { |entry| entry.code == "ESALINK" }
     {menu.parent, menu.permission}.should eq({"SETTINGS", "esalink.connection.manage"})
   end
