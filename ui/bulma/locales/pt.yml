@@ -22,7 +22,7 @@ pt:
       api_key_help: "Facultativa: a preencher se a EsaLink lhe tiver entregado uma."
       urls: "Endereços da API"
       production_help: "Obrigatório em produção: o endereço comunicado pela EsaLink."
-      directory_help: "Facultativo: API de diretório XP Z12-013, se a EsaLink a disponibilizar."
+      directory_help: "Facultativa: API de diretório XP Z12-013, se a EsaLink a disponibilizar."
       token_help: "Facultativo: endereço de POST /token se a EsaLink o separar do endereço da API (por predefinição: endereço da API seguido de token)."
       reentry_help: "Mudar de ambiente ou de endereço obriga a introduzir novamente a palavra-passe (e a chave de API): os segredos guardados nunca seguem para um endereço novo."
       forbidden: "Guardar ou desligar a ligação exige também a permissão de configurar a faturação eletrónica."
